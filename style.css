@@ -4,3 +4,155 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+
+
+:root{
+  --bg: #F8F7FC;
+  --white: #FFFFFF;
+  --gray: #545454;
+  --gray50: #A9A9A9;
+  --cyan: #324252;
+  --blue: #295DD6;
+  --black: #000;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background-color: var(--bg);
+}
+
+.container{
+  max-width: 670px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  -webkit-animation: fadeInDown 1s linear;
+  animation: fadeInDown 1s linear;
+}
+
+/* Animaçao entrada fade */
+@keyframes fadeInDown {
+  0% {
+     opacity: 0;
+     transform: translateY(-25px);
+  }
+  100% {
+     opacity: 1;
+     transform: translateY(0);
+  }
+} 
+
+.title{
+  user-select: none;
+  color: var(--blue);
+  font-size: 52px;
+  margin-bottom: 24px;
+  background: -webkit-linear-gradient(#399dfa, #295DD6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: transform 0.5s;
+}
+
+.title:hover{
+  transform: scale(1.05);
+}
+
+.form{
+  width: 94%;
+  display: flex;
+}
+
+.input{
+  width: 100%;
+  height: 60px;
+  border:0;
+  outline: none;
+  border-radius: 4px;
+  background-color: var(--white);
+  padding: 0 14px;
+  font-size: 16px;
+  transition: border 0.1s linear;
+}
+
+.input:focus{
+  border: 2px solid var(--blue);
+}
+
+.button{
+  cursor: pointer;
+  border:0;
+  border-radius: 4px;
+  height: 60px;
+  color: var(--white);
+  font-size: 18px;
+  background-color: var(--blue);
+  margin-left: 4px;
+  padding: 0 16px;
+}
+
+.content{
+  width:94%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 12px;
+  margin-top: 22px;
+  background-color: var(--white);
+  border-radius: 4px;
+}
+
+.hide{
+  display: none;
+}
+
+.date{
+  color: var(--gray);
+  font-size: 14px; 
+}
+
+.city{
+  color: var(--cyan);
+  margin-top: 14px;
+}
+
+.temp{
+  font-size: 124px;
+  color: var(--cyan);
+}
+
+.description{
+  font-size: 14px;
+  color: var(--cyan);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+
+/* Ajustando itens na tela quando a tela for até 300px de largura. */
+@media (max-width: 300px) {
+  .title{
+    font-size: 34px;
+  }
+
+  .form{
+    flex-direction: column;
+  }
+
+  .button{
+    width: 100%;
+    margin-left:0;
+    margin-top: 8px;
+  }
+
+  .temp{
+    font-size: 104px;
+  }
+}
