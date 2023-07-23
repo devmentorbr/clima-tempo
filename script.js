@@ -15,10 +15,10 @@ function handleSearch(event){
     return;
   }
 
-  const key = 'a5d6ce8fe6e41f4007e6c4233dcf1fcb';
+  const key = 'COLOQUE_AQUI_SUA_KEY';
   axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityInput},BR&lang=pt_br&appid=${key}`)
   .then(response => {
-      // console.log(response.data); Retorno da requisição
+      // console.log(response.data); << Retorno da requisição
 
       dateContent.innerText = new Date().toLocaleDateString("pt-BR");
       cityContent.innerText = response.data?.name;
